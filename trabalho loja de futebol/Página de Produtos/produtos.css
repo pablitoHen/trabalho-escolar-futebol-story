@@ -1,0 +1,695 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+
+    background: linear-gradient(
+        135deg,
+        #050b2e,
+        #0b1f5c,
+        #1647a5
+    );
+
+    background-attachment: fixed;
+
+    color: white;
+}
+
+h2 {
+    font-size: 15px;
+    margin-top: 12px;
+}
+
+p {
+    color: #d6ddff;
+    font-size: 14px;
+}
+
+
+/* ============================= */
+/* CABEÇALHO */
+/* ============================= */
+
+header {
+    background: linear-gradient(
+        180deg,
+        #050b2e,
+        #0b1f5c
+    );
+
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    border-bottom: 1px solid #304b91;
+}
+
+header input {
+    margin-top: 20px;
+
+    width: 300px;
+    padding: 14px;
+
+    border-radius: 60px;
+    border: 1px solid #304b91;
+
+    background-color: #101b42;
+    color: white;
+
+    outline: none;
+    font-size: 14px;
+}
+
+header input::placeholder {
+    color: #aebbe5;
+}
+
+header img {
+    width: 150px;
+
+    border-radius: 120%;
+
+    transition: 0.3s;
+}
+
+header img:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 10px 25px rgba(70, 130, 255, 0.25);
+}
+
+
+/* ============================= */
+/* BARRA DO TOPO */
+/* ============================= */
+
+.barra-topo {
+    background: linear-gradient(
+        90deg,
+        #101b50,
+        #1d4fa8
+    );
+
+    color: white;
+
+    text-align: center;
+
+    padding: 10px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+/* ============================= */
+/* MENU */
+/* ============================= */
+
+.menu {
+    background-color: #070d2b;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 40px;
+
+    padding: 18px;
+
+    border-bottom: 1px solid #263b72;
+}
+
+.menu a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+
+    position: relative;
+}
+
+.menu a:hover {
+    color: #9fc4ff;
+}
+
+
+/* LINHA DOS LINKS */
+
+.menu a::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 2px;
+
+    bottom: -5px;
+    left: 0;
+
+    background-color: #6ea8ff;
+
+    transform: scaleX(0);
+
+    transform-origin: bottom right;
+
+    transition: transform 0.3s ease;
+}
+
+.menu a:hover::after {
+    transform: scaleX(1);
+
+    transform-origin: bottom left;
+}
+
+
+/* ============================= */
+/* PRODUTOS */
+/* ============================= */
+
+.produtos {
+    display: flex;
+
+    justify-content: left;
+
+    flex-wrap: wrap;
+
+    gap: 40px;
+
+    padding: 70px;
+}
+
+.produto {
+    background: linear-gradient(
+        145deg,
+        #0b1744,
+        #122b69
+    );
+
+    width: 220px;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+    text-align: left;
+
+    transition: 0.3s;
+
+    border: 1px solid #294b91;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.produto:hover {
+    transform: translateY(-5px);
+
+    border-color: #5c8fe8;
+
+    box-shadow:
+        0 12px 30px rgba(40, 100, 220, 0.25);
+}
+
+.produto img {
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+
+/* ============================= */
+/* BOTÕES */
+/* ============================= */
+
+button {
+    width: 100%;
+
+    padding: 22px;
+
+    background: linear-gradient(
+        90deg,
+        #315fc4,
+        #6d4bc3
+    );
+
+    color: white;
+
+    border: none;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(
+        90deg,
+        #4073df,
+        #805ddd
+    );
+
+    transform: translateY(-2px);
+}
+
+
+/* ============================= */
+/* ÁREA DE CATEGORIAS */
+/* ============================= */
+
+.area-categorias {
+    background: linear-gradient(
+        90deg,
+        #08143b,
+        #112c68
+    );
+
+    text-align: center;
+
+    border-bottom: 3px solid #315cae;
+
+    margin: 20px 40px;
+}
+
+
+/* ============================= */
+/* BOTÃO CATEGORIAS */
+/* ============================= */
+
+.botao-categorias {
+    width: auto;
+
+    background-color: transparent;
+
+    color: white;
+
+    border: none;
+
+    padding: 16px 20px;
+
+    font-size: 13px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    position: relative;
+}
+
+.botao-categorias:hover {
+    background-color: transparent;
+
+    color: #9fc4ff;
+}
+
+
+/* LINHA DO BOTÃO CATEGORIAS */
+
+.botao-categorias::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 2px;
+
+    bottom: 5px;
+    left: 0;
+
+    background-color: #6ea8ff;
+
+    transform: scaleX(0);
+
+    transition: transform 0.3s ease;
+}
+
+.botao-categorias:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* ============================= */
+/* MENU DE CATEGORIAS */
+/* ============================= */
+
+.menu-categorias {
+    display: none;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 25px;
+
+    padding: 15px 30px 20px;
+
+    background-color: #080f2c;
+}
+
+
+/* CADA CATEGORIA */
+
+.menu-categorias button {
+    width: auto;
+
+    background-color: transparent;
+
+    color: white;
+
+    border: none;
+
+    padding: 8px 5px;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    position: relative;
+}
+
+.menu-categorias button:hover {
+    background-color: transparent;
+
+    color: #9fc4ff;
+
+    transform: translateY(-2px);
+}
+
+
+/* LINHA DAS CATEGORIAS */
+
+.menu-categorias button::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 2px;
+
+    bottom: 0;
+    left: 0;
+
+    background-color: #6ea8ff;
+
+    transform: scaleX(0);
+
+    transition: transform 0.3s ease;
+}
+
+.menu-categorias button:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* ============================= */
+/* ÁREA DE SUPORTE */
+/* ============================= */
+
+.suporte {
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+.suporte h1 {
+    font-size: 28px;
+
+    margin-bottom: 30px;
+}
+
+.suporte input {
+    width: 400px;
+
+    max-width: 90%;
+
+    padding: 16px;
+
+    border-radius: 30px;
+
+    border: 1px solid #304b91;
+
+    background-color: #101b42;
+
+    color: white;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+
+/* ============================= */
+/* FAQ */
+/* ============================= */
+
+.faq {
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 20px;
+}
+
+.pergunta {
+    background: linear-gradient(
+        145deg,
+        #0b1744,
+        #122b69
+    );
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    border-radius: 12px;
+
+    border: 1px solid #294b91;
+
+    transition: 0.3s;
+}
+
+.pergunta:hover {
+    border-color: #5c8fe8;
+}
+
+.pergunta h3 {
+    margin-top: 0;
+
+    font-size: 18px;
+}
+
+.pergunta p {
+    color: #cbd5f5;
+
+    margin-bottom: 0;
+}
+
+
+
+
+/* ========================================
+   BOTÕES DE FAVORITOS
+======================================== */
+
+.produto {
+    position: relative;
+}
+
+/* CORAÇÃO */
+
+.botao-favorito {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    width: 42px !important;
+    height: 42px !important;
+
+    padding: 0 !important;
+    margin: 0;
+
+    border-radius: 50% !important;
+    border: 1px solid rgba(255,255,255,0.5) !important;
+
+    background: rgba(255,255,255,0.95) !important;
+
+    color: #263b72 !important;
+
+    font-size: 27px !important;
+    font-weight: normal;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+
+    transition: 0.25s ease;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
+
+.botao-favorito:hover {
+    transform: scale(1.12) !important;
+
+    background: white !important;
+}
+
+/* PRODUTO FAVORITADO */
+
+.botao-favorito.favoritado {
+    color: #e32645 !important;
+    background: white !important;
+}
+
+/* ANIMAÇÃO DO CORAÇÃO */
+
+.botao-favorito:active {
+    transform: scale(0.90) !important;
+}
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    .botao-favorito {
+        width: 38px !important;
+        height: 38px !important;
+        font-size: 24px !important;
+    }
+
+}
+
+
+
+/* ========================================
+   ANIMAÇÃO DOS CARDS DE PRODUTOS
+======================================== */
+
+.produto {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+/* FUNDO COM A MESMA IMAGEM DESFOCADA */
+
+.produto::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image: var(--imagem-produto);
+    background-size: cover;
+    background-position: center;
+
+    filter: blur(22px);
+    opacity: 0;
+
+    transform: scale(1.3);
+
+    z-index: -1;
+
+    transition:
+        opacity 0.4s ease,
+        transform 0.5s ease;
+}
+
+/* DESTAQUE DO CARD */
+
+.produto:hover {
+    transform: translateY(-9px) scale(1.025);
+
+    border-color: #78aaff;
+
+    box-shadow:
+        0 15px 35px rgba(40, 110, 255, 0.35);
+}
+
+.produto:hover::before {
+    opacity: 0.35;
+    transform: scale(1.5);
+}
+
+/* IMAGEM PRINCIPAL */
+
+.produto img {
+    position: relative;
+    z-index: 1;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.produto:hover img {
+    transform: scale(1.045);
+    filter: brightness(1.08);
+}
+
+/* TEXTO E BOTÃO ACIMA DO EFEITO */
+
+.produto h2,
+.produto p,
+.produto button {
+    position: relative;
+    z-index: 2;
+}
+
+/* CORAÇÃO DE FAVORITOS */
+
+.produto .botao-favorito {
+    z-index: 10;
+}
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+    .produto,
+    .produto::before,
+    .produto img {
+        transition: none;
+    }
+}
+
+/* CELULAR */
+
+@media (hover: none) {
+    .produto:active {
+        transform: scale(0.98);
+    }
+}

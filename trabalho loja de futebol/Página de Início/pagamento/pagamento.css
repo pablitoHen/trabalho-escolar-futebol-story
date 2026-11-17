@@ -1,0 +1,487 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #07145c, #1746c7, #7026c9);
+    color: white;
+}
+
+/* BARRA SUPERIOR */
+.barra-topo {
+    background: #0e0438;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* CABEÇALHO */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+header img {
+    width: 150px;
+    max-width: 80%;
+}
+
+/* MENU */
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 15px;
+    background: rgba(5, 5, 40, 0.75);
+    flex-wrap: wrap;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #8fd3ff;
+    transform: scale(1.05);
+}
+
+/* CONTAINER PRINCIPAL */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(10, 10, 50, 0.88);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+.titulo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.titulo h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.titulo p {
+    color: #cfd8ff;
+}
+
+/* PRODUTOS */
+#listaPagamento {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.produto-pagamento {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    transition: 0.3s;
+}
+
+.produto-pagamento:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.produto-pagamento img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    background: white;
+    border-radius: 10px;
+    padding: 5px;
+    flex-shrink: 0;
+}
+
+.produto-info {
+    flex: 1;
+}
+
+.produto-info h2 {
+    margin: 0 0 5px;
+    font-size: 18px;
+}
+
+.produto-info p {
+    margin: 4px 0;
+    color: #cfd8ff;
+    font-size: 14px;
+}
+
+.produto-info .quantidade {
+    color: #9fdcff;
+}
+
+.produto-info .preco-item {
+    color: #80ffb0;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+/* CUPOM DE DESCONTO */
+.area-cupom {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+}
+
+.area-cupom h2 {
+    margin-top: 0;
+    font-size: 21px;
+}
+
+.area-cupom p {
+    color: #d5dcff;
+}
+
+.campo-cupom {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.campo-cupom input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+}
+
+.campo-cupom button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #267cff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.campo-cupom button:hover {
+    background: #7925d4;
+    transform: translateY(-2px);
+}
+
+#mensagemCupom {
+    margin-bottom: 0;
+    font-weight: bold;
+}
+
+#valorDesconto {
+    color: #80ffb0;
+    font-weight: bold;
+}
+
+/* TOTAL */
+.resumo {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: right;
+}
+
+.resumo p {
+    margin: 5px 0;
+    color: #d5dcff;
+}
+
+#totalPagamento {
+    margin: 5px 0 0;
+    font-size: 28px;
+    color: #80ffb0;
+}
+
+/* FORMAS DE PAGAMENTO */
+.titulo-pagamento {
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+.opcoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.opcao {
+    position: relative;
+}
+
+.opcao input {
+    display: none;
+}
+
+.opcao label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 60px;
+    padding: 10px;
+    background: #17175a;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.opcao label:hover {
+    background: #25258a;
+    transform: translateY(-2px);
+}
+
+.opcao input:checked + label {
+    border-color: #73c8ff;
+    background: #24247d;
+    box-shadow: 0 0 15px rgba(100, 190, 255, 0.35);
+}
+
+/* DADOS DO PAGAMENTO */
+.dados {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 14px;
+    animation: aparecer 0.3s ease;
+}
+
+.dados.ativo {
+    display: block;
+}
+
+.dados h3 {
+    margin-top: 0;
+}
+
+.campo {
+    margin-bottom: 15px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #dfe5ff;
+}
+
+.campo input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+}
+
+.linha {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.pix {
+    text-align: center;
+}
+
+.pix-codigo {
+    margin-top: 15px;
+    padding: 15px;
+    background: white;
+    color: #111;
+    border-radius: 10px;
+    font-weight: bold;
+    word-break: break-all;
+}
+
+.boleto {
+    text-align: center;
+}
+
+/* BOTÃO */
+.botao-continuar {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #267cff, #7925d4);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao-continuar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(70, 120, 255, 0.4);
+}
+
+/* MENSAGEM */
+#mensagem {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    text-align: center;
+    background: rgba(0, 255, 130, 0.12);
+    border: 1px solid #58e89a;
+    border-radius: 12px;
+    color: #8fffb9;
+    animation: aparecer 0.4s ease;
+}
+
+/* ANIMAÇÃO */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   CUPOM DE DESCONTO
+========================= */
+
+.area-cupom {
+    margin: 25px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+}
+
+.area-cupom h2 {
+    margin-top: 0;
+    color: #9fdcff;
+}
+
+.area-cupom p {
+    color: #d5dcff;
+}
+
+.campo-cupom {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.campo-cupom input {
+    flex: 1;
+    min-width: 0;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+}
+
+.campo-cupom button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    background: #267cff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.campo-cupom button:hover {
+    background: #7026c9;
+}
+
+#mensagemCupom {
+    font-weight: bold;
+}
+
+#valorDesconto {
+    color: #80ffb0;
+    font-weight: bold;
+}
+
+@media (max-width: 450px) {
+    .campo-cupom {
+        flex-direction: column;
+    }
+}
+
+
+/* RESPONSIVO */
+@media (max-width: 700px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .opcoes {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .produto-pagamento {
+        align-items: flex-start;
+    }
+
+    .produto-pagamento img {
+        width: 65px;
+        height: 65px;
+    }
+
+    .linha {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 450px) {
+    .opcoes {
+        grid-template-columns: 1fr;
+    }
+
+    .produto-pagamento {
+        flex-direction: column;
+    }
+
+    .produto-pagamento img {
+        width: 90px;
+        height: 90px;
+    }
+
+    .campo-cupom {
+        flex-direction: column;
+    }
+}
+

@@ -1,0 +1,490 @@
+
+/* ========================================
+   CONFIGURAÇÃO GERAL
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(
+        135deg,
+        #050b2e,
+        #0b1f5c,
+        #1647a5
+    );
+    color: #ffffff;
+    min-height: 100vh;
+}
+
+
+/* ========================================
+   CONTAINER DO LOGIN
+======================================== */
+
+.container-login {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25px;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(109, 75, 195, 0.35),
+            transparent 55%
+        ),
+        linear-gradient(
+            135deg,
+            #050b2e,
+            #0b1f5c,
+            #1647a5
+        );
+}
+
+
+/* ========================================
+   CAIXA DE ACESSO
+======================================== */
+
+.caixa-acesso {
+    width: 100%;
+    max-width: 430px;
+
+    background: linear-gradient(
+        145deg,
+        #0b1744,
+        #122b69
+    );
+
+    border: 1px solid #294b91;
+    border-radius: 14px;
+
+    padding: 32px;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.45),
+        0 0 25px rgba(78, 130, 255, 0.12);
+}
+
+
+/* ========================================
+   LOGO
+======================================== */
+
+.logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo span {
+    font-size: 38px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.logo h1 {
+    color: #6ea8ff;
+    font-size: 22px;
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 12px rgba(110, 168, 255, 0.25);
+}
+
+
+/* ========================================
+   ABAS LOGIN E CADASTRO
+======================================== */
+
+.abas {
+    display: flex;
+
+    border-bottom: 1px solid #294b91;
+
+    margin-bottom: 28px;
+}
+
+.aba {
+    flex: 1;
+
+    background: transparent;
+    border: none;
+
+    color: #9fc4ff;
+
+    padding: 13px;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.aba:hover {
+    color: #ffffff;
+}
+
+.aba.ativa {
+    color: #6ea8ff;
+
+    border-bottom: 2px solid #6ea8ff;
+}
+
+
+/* ========================================
+   TÍTULOS
+======================================== */
+
+.caixa-acesso h2 {
+    margin: 0 0 10px;
+
+    text-align: center;
+
+    font-size: 25px;
+    color: #ffffff;
+}
+
+.subtitulo {
+    margin: 0 0 28px;
+
+    text-align: center;
+
+    color: #cbd5f5;
+
+    font-size: 14px;
+    line-height: 21px;
+}
+
+
+/* ========================================
+   CAMPOS E ETIQUETAS
+======================================== */
+
+.caixa-acesso label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #d6ddff;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.caixa-acesso input {
+    width: 100%;
+
+    padding: 14px;
+    margin-bottom: 20px;
+
+    background-color: #122b69;
+
+    border: 1px solid #304b91;
+    border-radius: 7px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.caixa-acesso input:focus {
+    border-color: #6ea8ff;
+
+    box-shadow:
+        0 0 8px rgba(110, 168, 255, 0.35);
+}
+
+.caixa-acesso input::placeholder {
+    color: #9fc4ff;
+}
+
+
+/* ========================================
+   BOTÃO PRINCIPAL
+======================================== */
+
+.botao-principal {
+    width: 100%;
+
+    padding: 15px;
+    margin-top: 5px;
+
+    background: linear-gradient(
+        135deg,
+        #315fc4,
+        #1647a5
+    );
+
+    color: #ffffff;
+
+    border: 1px solid #477ce0;
+    border-radius: 7px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.botao-principal:hover {
+    background: linear-gradient(
+        135deg,
+        #477ce0,
+        #6d4bc3
+    );
+
+    border-color: #8abaff;
+
+    box-shadow:
+        0 5px 18px rgba(78, 130, 255, 0.3);
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   ELEMENTOS ESCONDIDOS
+======================================== */
+
+.escondido {
+    display: none !important;
+}
+
+
+/* ========================================
+   MENSAGENS
+======================================== */
+
+#mensagem {
+    text-align: center;
+
+    margin-top: 18px;
+
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.mensagem-erro {
+    color: #ff7777;
+}
+
+.mensagem-sucesso {
+    color: #75d58a;
+}
+
+
+/* ========================================
+   ÁREA DO USUÁRIO
+======================================== */
+
+#areaUsuario {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#areaUsuario h2 {
+    color: #6ea8ff;
+    margin-bottom: 15px;
+}
+
+
+/* ========================================
+   VOLTAR PARA A LOJA
+======================================== */
+
+.voltar {
+    display: block;
+
+    margin-top: 28px;
+
+    text-align: center;
+
+    color: #9fc4ff;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+}
+
+.voltar:hover {
+    color: #ffffff;
+
+    text-shadow:
+        0 0 8px rgba(110, 168, 255, 0.5);
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 480px) {
+
+    .caixa-acesso {
+        padding: 25px 20px;
+    }
+
+    .logo h1 {
+        font-size: 19px;
+    }
+
+}
+
+
+
+
+
+
+/* ========================================
+   ANIMAÇÃO DE TRANSIÇÃO LOGIN / CADASTRO
+======================================== */
+
+.caixa-acesso {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Conteúdo permanece acima do fundo */
+
+.caixa-acesso > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Faixa luminosa */
+
+.caixa-acesso::before {
+    content: "";
+    position: absolute;
+    z-index: 5;
+
+    top: -20%;
+    left: -65%;
+
+    width: 48%;
+    height: 140%;
+
+    opacity: 0;
+    pointer-events: none;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(110, 168, 255, 0.12),
+        rgba(110, 168, 255, 0.9),
+        rgba(160, 200, 255, 0.45),
+        transparent
+    );
+
+    filter: blur(5px);
+    transform: skewX(-18deg);
+}
+
+/* Brilho externo da faixa */
+
+.caixa-acesso::after {
+    content: "";
+    position: absolute;
+    z-index: 4;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    pointer-events: none;
+
+    background: rgba(65, 125, 235, 0.08);
+}
+
+/* Ativação da animação */
+
+.caixa-acesso.animando::before {
+    animation: passagemFaixa 0.7s ease-in-out forwards;
+}
+
+.caixa-acesso.animando::after {
+    animation: brilhoTransicao 0.7s ease-in-out forwards;
+}
+
+@keyframes passagemFaixa {
+
+    0% {
+        left: -65%;
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        left: 55%;
+        opacity: 1;
+    }
+
+    85% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 120%;
+        opacity: 0;
+    }
+}
+
+@keyframes brilhoTransicao {
+
+    0%, 100% {
+        opacity: 0;
+    }
+
+    40%, 60% {
+        opacity: 1;
+    }
+}
+
+/* Pequeno destaque na caixa */
+
+.caixa-acesso {
+    transition:
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
+}
+
+.caixa-acesso.animando {
+    border-color: #6ea8ff;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.45),
+        0 0 35px rgba(78, 130, 255, 0.4);
+}
+
+/* Acessibilidade: respeita quem prefere menos movimento */
+
+@media (prefers-reduced-motion: reduce) {
+    .caixa-acesso.animando::before,
+    .caixa-acesso.animando::after {
+        animation-duration: 0.01ms;
+    }
+}
+

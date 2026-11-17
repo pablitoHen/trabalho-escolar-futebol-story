@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futbol Store</title>
+    <link rel="stylesheet" href="inicio.css">
+</head>
+
+<body>
+
+    <!-- SPLASH SCREEN -->
+    <div id="splash">
+        <div class="splash-conteudo">
+            <img
+                src="../Imagens/logo da loja azul.jpeg"
+                alt="Logo da Futbol Store"
+                class="logo-splash"
+            >
+            <h1>SEJA BEM-VINDO</h1>
+            <p>À FUTBOL STORE ⚽</p>
+            <div class="carregamento"></div>
+        </div>
+    </div>
+
+    <!-- BARRA SUPERIOR -->
+    <div class="barra-topo">
+
+        <!-- REDES SOCIAIS -->
+        <div class="redes-topo">
+
+            <!-- INSTAGRAM -->
+            <div class="rede-item">
+                <div class="rede-titulo">
+                    <span class="rede-icone instagram">
+                        <img
+                            src="https://img.icons8.com/color/48/instagram-new--v1.png"
+                            alt="Instagram"
+                        >
+                    </span>
+                    <span>Instagram</span>
+                </div>
+
+                <div class="rede-dropdown">
+                    <div class="dropdown-identidade">
+                        <img
+                            src="https://img.icons8.com/color/48/instagram-new--v1.png"
+                            alt="Instagram"
+                        >
+                        <strong>Instagram</strong>
+                    </div>
+                    <span>@futbolstore</span>
+                    <a href="#">Acessar Instagram →</a>
+                </div>
+            </div>
+
+            <!-- WHATSAPP -->
+            <div class="rede-item">
+                <div class="rede-titulo">
+                    <span class="rede-icone whatsapp">
+                        <img
+                            src="https://img.icons8.com/ios/50/whatsapp--v1.png"
+                            alt="WhatsApp"
+                        >
+                    </span>
+                    <span>WhatsApp</span>
+                </div>
+
+                <div class="rede-dropdown">
+                    <div class="dropdown-identidade">
+                        <img
+                            src="https://img.icons8.com/ios/50/whatsapp--v1.png"
+                            alt="WhatsApp"
+                        >
+                        <strong>WhatsApp</strong>
+                    </div>
+                    <span>(11) 99999-9999</span>
+                    <a href="#">Falar conosco →</a>
+                </div>
+            </div>
+
+            <!-- FACEBOOK -->
+            <div class="rede-item">
+                <div class="rede-titulo">
+                    <span class="rede-icone facebook">f</span>
+                    <span>Facebook</span>
+                </div>
+
+                <div class="rede-dropdown">
+                    <div class="dropdown-identidade">
+                        <span class="facebook-grande">f</span>
+                        <strong>Facebook</strong>
+                    </div>
+                    <span>Futbol Store</span>
+                    <a href="#">Acessar Facebook →</a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- TEXTO CENTRAL -->
+        <div class="texto-colecoes">
+            NOVAS COLEÇÕES DISPONÍVEIS!
+        </div>
+
+        <!-- ÁREA DA CONTA -->
+<div class="area-conta" id="areaConta"></div>
+
+    </div>
+
+    <!-- BANNER DE PONTA A PONTA -->
+    <div class="banner-cabecalho">
+        <img
+            src="../Imagens/banner da loja azul.jpeg"
+            alt="Futbol Store"
+            class="banner-logo-central"
+        >
+    </div>
+
+    <!-- CABEÇALHO COM PESQUISA -->
+    <header class="cabecalho-principal">
+
+        <div class="search-bar">
+            <input
+                type="text"
+                id="campoPesquisa"
+                placeholder="Pesquisar produtos..."
+            >
+
+            <button
+                class="search-button"
+                onclick="pesquisar()"
+                aria-label="Pesquisar"
+            >
+                🔍
+            </button>
+        </div>
+
+    </header>
+
+   
+<!-- MENU -->
+<nav class="menu">
+    <a href="inicio.html">INÍCIO</a>
+
+    <a href="../Página de Produtos/produtos.html">
+        PRODUTOS
+    </a>
+
+    <a href="../Página de Promoções/promocoes.html">
+        PROMOÇÕES
+    </a>
+
+    <a href="../Página de Contatos/contato.html">
+        CONTATO
+    </a>
+
+
+
+    </div>
+</nav>
+
+
+
+<!-- VITRINE DE PRODUTOS -->
+
+<main class="vitrine-inicio">
+
+    <section class="secao-vitrine">
+        <div class="titulo-vitrine">
+            <span>♡</span>
+            <div>
+                <h2>SEUS FAVORITOS</h2>
+                <p>Os produtos que você salvou</p>
+            </div>
+        </div>
+
+        <div class="grade-vitrine" id="vitrineFavoritos"></div>
+    </section>
+
+    <section class="secao-vitrine">
+        <div class="titulo-vitrine">
+            <span>★</span>
+            <div>
+                <h2>MAIS BEM AVALIADOS</h2>
+                <p>Produtos em destaque na nossa loja</p>
+            </div>
+        </div>
+
+        <div class="grade-vitrine" id="vitrineAvaliados"></div>
+    </section>
+
+    <section class="secao-vitrine">
+        <div class="titulo-vitrine">
+            <span>🔥</span>
+            <div>
+                <h2>PROMOÇÕES DO DIA</h2>
+                <p>Encontre seu próximo favorito com desconto</p>
+            </div>
+        </div>
+
+        <div class="grade-vitrine" id="vitrinePromocoes"></div>
+    </section>
+
+</main>
+
+
+
+    <!-- SOBRE -->
+    <section class="sobre">
+        <h2>SOBRE A MARCA</h2>
+
+        <p>
+            Nossa loja foi criada para pessoas que gostam
+            de autenticidade, estilo e produtos com personalidade.
+        </p>
+    </section>
+
+    <!-- DIFERENCIAIS -->
+    <section class="diferenciais">
+
+        <div class="card-diferencial">
+            <h3>ENVIO RÁPIDO</h3>
+            <p>Entregamos para o Brasil inteiro.</p>
+        </div>
+
+        <div class="card-diferencial">
+            <h3>QUALIDADE PREMIUM</h3>
+            <p>Produtos de melhor qualidade para os clientes.</p>
+        </div>
+
+        <div class="card-diferencial">
+            <h3>PAGAMENTO SEGURO</h3>
+            <p>Compre com total segurança.</p>
+        </div>
+
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>
+            Escola Professor João Prado Margarido -
+            Todos os direitos reservados © 2026
+        </p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="inicio.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,300 @@
+
+/* ============================= */
+/* CONFIGURAÇÃO GERAL */
+/* ============================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        #050b2e,
+        #0b1f5c,
+        #1647a5
+    );
+
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+
+/* ============================= */
+/* TÍTULOS */
+/* ============================= */
+
+h2 {
+    color: #ffffff;
+    text-align: center;
+    font-size: 40px;
+}
+
+
+/* ============================= */
+/* BARRA SUPERIOR */
+/* ============================= */
+
+.barra-topo {
+    background: linear-gradient(
+        90deg,
+        #101b50,
+        #1d4fa8
+    );
+
+    color: white;
+    text-align: center;
+
+    padding: 10px;
+
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+/* ============================= */
+/* CABEÇALHO */
+/* ============================= */
+
+header {
+    background: linear-gradient(
+        180deg,
+        #050b2e,
+        #0b1f5c
+    );
+
+    padding: 30px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: 1px solid #304b91;
+}
+
+
+/* LOGO */
+
+header img {
+    width: 150px;
+    border-radius: 50%;
+
+    transition: 0.3s;
+}
+
+header img:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 10px 25px rgba(70, 130, 255, 0.25);
+}
+
+
+/* ============================= */
+/* MENU */
+/* ============================= */
+
+.menu {
+    background-color: #070d2b;
+
+    display: flex;
+    justify-content: center;
+
+    gap: 40px;
+
+    padding: 18px;
+
+    border-bottom: 1px solid #263b72;
+}
+
+.menu a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    letter-spacing: 1px;
+
+    transition: 0.3s;
+
+    position: relative;
+}
+
+.menu a:hover {
+    color: #9fc4ff;
+}
+
+
+/* LINHA DOS LINKS */
+
+.menu a::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 2px;
+
+    bottom: -5px;
+    left: 0;
+
+    background-color: #6ea8ff;
+
+    transform: scaleX(0);
+
+    transform-origin: bottom right;
+
+    transition: transform 0.3s ease;
+}
+
+.menu a:hover::after {
+    transform: scaleX(1);
+
+    transform-origin: bottom left;
+}
+
+
+/* ============================= */
+/* ÁREA PRINCIPAL */
+/* ============================= */
+
+.suporte {
+    text-align: center;
+
+    padding: 60px 20px;
+}
+
+.suporte h1 {
+    margin-bottom: 30px;
+
+    font-size: 28px;
+    color: white;
+}
+
+.suporte input {
+    width: 400px;
+    max-width: 90%;
+
+    padding: 16px;
+
+    border-radius: 30px;
+
+    border: 1px solid #304b91;
+
+    background-color: #101b42;
+
+    color: white;
+
+    outline: none;
+
+    font-size: 15px;
+
+    transition: 0.3s;
+}
+
+.suporte input:focus {
+    border-color: #6ea8ff;
+
+    box-shadow:
+        0 0 12px rgba(80, 145, 255, 0.25);
+}
+
+.suporte input::placeholder {
+    color: #aebbe5;
+}
+
+
+/* ============================= */
+/* FAQ */
+/* ============================= */
+
+.faq {
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 20px;
+}
+
+.pergunta {
+    background: linear-gradient(
+        145deg,
+        #0b1744,
+        #122b69
+    );
+
+    padding: 25px;
+
+    margin-bottom: 20px;
+
+    border-radius: 12px;
+
+    border: 1px solid #294b91;
+
+    transition: 0.3s;
+}
+
+.pergunta:hover {
+    border-color: #5c8fe8;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 20px rgba(40, 100, 220, 0.2);
+}
+
+.pergunta h3 {
+    margin-top: 0;
+
+    font-size: 18px;
+
+    color: white;
+}
+
+.pergunta p {
+    color: #cbd5f5;
+
+    margin-bottom: 0;
+}
+
+
+/* ============================= */
+/* RESPONSIVIDADE */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+    header {
+        padding: 25px;
+    }
+
+    .menu {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .suporte {
+        padding: 40px 15px;
+    }
+
+    .suporte h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .faq {
+        padding: 15px;
+    }
+
+    .pergunta {
+        padding: 20px;
+    }
+}

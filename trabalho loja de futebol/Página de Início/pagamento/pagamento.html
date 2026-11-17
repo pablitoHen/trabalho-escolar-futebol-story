@@ -1,0 +1,528 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento - Futbol Store</title>
+
+    <link rel="stylesheet" href="pagamento.css">
+
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #07145c, #1746c7, #7026c9);
+            color: white;
+        }
+
+        .barra-topo {
+            background: #0e0438;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        header img {
+            width: 150px;
+            max-width: 80%;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            padding: 15px;
+            background: rgba(5, 5, 40, 0.75);
+            flex-wrap: wrap;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .menu a:hover {
+            color: #8fd3ff;
+            transform: scale(1.05);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(10, 10, 50, 0.88);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .titulo h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .titulo p {
+            color: #cfd8ff;
+        }
+
+        #listaPagamento {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .produto-pagamento {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 14px;
+            transition: 0.3s;
+        }
+
+        .produto-pagamento:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .produto-pagamento img {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            background: white;
+            border-radius: 10px;
+            padding: 5px;
+            flex-shrink: 0;
+        }
+
+        .produto-info { flex: 1; }
+
+        .produto-info h2 {
+            margin: 0 0 5px;
+            font-size: 18px;
+        }
+
+        .produto-info p {
+            margin: 4px 0;
+            color: #cfd8ff;
+            font-size: 14px;
+        }
+
+        .produto-info .quantidade { color: #9fdcff; }
+
+        .produto-info .preco-item {
+            color: #80ffb0;
+            font-size: 17px;
+            font-weight: bold;
+            margin-top: 8px;
+        }
+
+        .resumo {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: right;
+        }
+
+        .resumo p {
+            margin: 5px 0;
+            color: #d5dcff;
+        }
+
+        #totalPagamento {
+            margin: 5px 0 0;
+            font-size: 28px;
+            color: #80ffb0;
+        }
+
+        .titulo-pagamento {
+            margin-top: 35px;
+            margin-bottom: 15px;
+        }
+
+        .opcoes {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .opcao { position: relative; }
+
+        .opcao input { display: none; }
+
+        .opcao label {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 60px;
+            padding: 10px;
+            background: #17175a;
+            border: 2px solid transparent;
+            border-radius: 12px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .opcao label:hover {
+            background: #25258a;
+            transform: translateY(-2px);
+        }
+
+        .opcao input:checked + label {
+            border-color: #73c8ff;
+            background: #24247d;
+            box-shadow: 0 0 15px rgba(100, 190, 255, 0.35);
+        }
+
+        .dados {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 14px;
+            animation: aparecer 0.3s ease;
+        }
+
+        .dados.ativo { display: block; }
+
+        .dados h3 { margin-top: 0; }
+
+        .campo { margin-bottom: 15px; }
+
+        .campo label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #dfe5ff;
+        }
+
+        .campo input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .linha {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .pix { text-align: center; }
+
+        .pix-codigo {
+            margin-top: 15px;
+            padding: 15px;
+            background: white;
+            color: #111;
+            border-radius: 10px;
+            font-weight: bold;
+            word-break: break-all;
+        }
+
+        .boleto { text-align: center; }
+
+        .botao-continuar {
+            width: 100%;
+            margin-top: 25px;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #267cff, #7925d4);
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .botao-continuar:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(70, 120, 255, 0.4);
+        }
+
+        #mensagem {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            text-align: center;
+            background: rgba(0, 255, 130, 0.12);
+            border: 1px solid #58e89a;
+            border-radius: 12px;
+            color: #8fffb9;
+            animation: aparecer 0.4s ease;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                width: 95%;
+                padding: 20px;
+            }
+
+            .opcoes { grid-template-columns: 1fr 1fr; }
+
+            .produto-pagamento { align-items: flex-start; }
+
+            .produto-pagamento img {
+                width: 65px;
+                height: 65px;
+            }
+
+            .linha { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 450px) {
+            .opcoes { grid-template-columns: 1fr; }
+
+            .produto-pagamento { flex-direction: column; }
+
+            .produto-pagamento img {
+                width: 90px;
+                height: 90px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="barra-topo">
+        FRETE GRÁTIS PARA TODO O PAÍS 🚚
+    </div>
+
+    <header>
+        <img src="../Imagens/logo site original.png" alt="Logo da Futbol Store">
+    </header>
+
+    <nav class="menu">
+        <a href="../Página de Início/inicio.html">INÍCIO</a>
+        <a href="../Página de Produtos/produtos.html">PRODUTOS</a>
+        <a href="../Página de Promoções/promocoes.html">PROMOÇÕES</a>
+        <a href="../Página de Contatos/contato.html">CONTATO</a>
+    </nav>
+
+    <main class="container">
+
+        <div class="titulo">
+            <h1 id="tituloPagamento">💳 Finalizar Pagamento</h1>
+            <p>Confira seus produtos e escolha uma forma de pagamento.</p>
+        </div>
+
+        <!-- CUPOM DE DESCONTO -->
+        <div class="area-cupom">
+            <h2>🎟️ Cupom de desconto</h2>
+            <p>Possui um cupom? Digite abaixo para ganhar desconto.</p>
+
+            <div class="campo-cupom">
+                <input
+                    type="text"
+                    id="campoCupom"
+                    placeholder="Digite seu cupom"
+                >
+
+                <button type="button" onclick="aplicarCupom()">
+                    APLICAR
+                </button>
+            </div>
+
+            <p id="mensagemCupom"></p>
+            <p id="valorDesconto"></p>
+        </div>
+
+        <!-- PRODUTOS -->
+        <div id="listaPagamento"></div>
+
+        <!-- RESUMO -->
+        <div class="resumo">
+            <p>Subtotal:</p>
+            <p id="subtotalPagamento">R$ 0,00</p>
+
+            <p>Desconto:</p>
+            <p id="descontoPagamento">R$ 0,00</p>
+
+            <p>Total da compra:</p>
+            <h2 id="totalPagamento">R$ 0,00</h2>
+        </div>
+
+        <h2 class="titulo-pagamento">
+            Escolha a forma de pagamento
+        </h2>
+
+        <div class="opcoes">
+
+            <div class="opcao">
+                <input
+                    type="radio"
+                    id="credito"
+                    name="pagamento"
+                    value="credito"
+                    onclick="mostrarPagamento('dadosCredito')"
+                >
+                <label for="credito">💳 Cartão de Crédito</label>
+            </div>
+
+            <div class="opcao">
+                <input
+                    type="radio"
+                    id="debito"
+                    name="pagamento"
+                    value="debito"
+                    onclick="mostrarPagamento('dadosDebito')"
+                >
+                <label for="debito">💳 Cartão de Débito</label>
+            </div>
+
+            <div class="opcao">
+                <input
+                    type="radio"
+                    id="pix"
+                    name="pagamento"
+                    value="pix"
+                    onclick="mostrarPagamento('dadosPix')"
+                >
+                <label for="pix">📱 Pix</label>
+            </div>
+
+            <div class="opcao">
+                <input
+                    type="radio"
+                    id="boleto"
+                    name="pagamento"
+                    value="boleto"
+                    onclick="mostrarPagamento('dadosBoleto')"
+                >
+                <label for="boleto">📄 Boleto</label>
+            </div>
+
+        </div>
+
+        <!-- CRÉDITO -->
+        <div class="dados" id="dadosCredito">
+            <h3>💳 Dados do Cartão de Crédito</h3>
+
+            <div class="campo">
+                <label>Número do cartão</label>
+                <input type="text" placeholder="0000 0000 0000 0000">
+            </div>
+
+            <div class="campo">
+                <label>Nome no cartão</label>
+                <input type="text" placeholder="Nome completo">
+            </div>
+
+            <div class="linha">
+                <div class="campo">
+                    <label>Validade</label>
+                    <input type="text" placeholder="MM/AA">
+                </div>
+
+                <div class="campo">
+                    <label>CVV</label>
+                    <input type="text" placeholder="123">
+                </div>
+            </div>
+        </div>
+
+        <!-- DÉBITO -->
+        <div class="dados" id="dadosDebito">
+            <h3>💳 Dados do Cartão de Débito</h3>
+
+            <div class="campo">
+                <label>Número do cartão</label>
+                <input type="text" placeholder="0000 0000 0000 0000">
+            </div>
+
+            <div class="campo">
+                <label>Nome no cartão</label>
+                <input type="text" placeholder="Nome completo">
+            </div>
+
+            <div class="campo">
+                <label>CVV</label>
+                <input type="text" placeholder="123">
+            </div>
+        </div>
+
+        <!-- PIX -->
+        <div class="dados pix" id="dadosPix">
+            <h3>📱 Pagamento via Pix</h3>
+            <p>Use o código abaixo para realizar o pagamento.</p>
+
+            <div class="pix-codigo">
+                futbolstore@pix-simulacao.com
+            </div>
+
+            <p>⚠️ Este é apenas um Pix de demonstração.</p>
+        </div>
+
+        <!-- BOLETO -->
+        <div class="dados boleto" id="dadosBoleto">
+            <h3>📄 Boleto Bancário</h3>
+            <p>
+                Ao continuar, será gerado um boleto
+                de demonstração para esta compra.
+            </p>
+            <p>🧾 Vencimento: 3 dias</p>
+        </div>
+
+        <!-- BOTÃO -->
+        <button
+            class="botao-continuar"
+            onclick="continuarPagamento()"
+        >
+            FINALIZAR PAGAMENTO
+        </button>
+
+        <!-- MENSAGEM -->
+        <div id="mensagem">
+            <h2>✅ Pagamento simulado com sucesso!</h2>
+            <p>Obrigado por comprar na Futbol Store.</p>
+            <p id="mensagemTotal"></p>
+        </div>
+
+    </main>
+
+    <!-- JAVASCRIPT EXTERNO -->
+    <script src="pagamento.js"></script>
+
+</body>
+</html>
