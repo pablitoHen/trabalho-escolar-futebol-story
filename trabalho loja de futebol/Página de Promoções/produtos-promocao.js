@@ -1,4 +1,3 @@
-
 // ATUALIZAÇÃO 01/09 - TODO ESTE ARQUIVO FOI CRIADO NESTA ATUALIZAÇÃO
 
 const produtosPromocao = {
@@ -18,12 +17,12 @@ const produtosPromocao = {
             {
                 nome: "Vermelha",
                 especificacao: "Cor vermelha • 100% algodão",
-                imagem: "../Imagens/j f united.jpeg"
+                imagem: "../Imagens/j frente united.jpeg"
             },
             {
                 nome: "Preta",
                 especificacao: "Cor preta • 100% algodão",
-                imagem: "../Imagens/j f united.jpeg"
+                imagem: "../Imagens/j corpo united.jpeg"
             }
         ]
     },
@@ -43,12 +42,12 @@ const produtosPromocao = {
             {
                 nome: "Vermelha",
                 especificacao: "Cor vermelha • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/c costa united.jpeg"
             },
             {
                 nome: "Vermelha e Branca",
                 especificacao: "Vermelho e branco • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/c f united.jpeg"
             }
         ]
     },
@@ -68,12 +67,12 @@ const produtosPromocao = {
             {
                 nome: "Azul",
                 especificacao: "Cor azul • 100% algodão",
-                imagem: "../Imagens/j f united.jpeg"
+                imagem: "../Imagens/j frente city.jpeg"
             },
             {
                 nome: "Azul Marinho",
                 especificacao: "Cor azul marinho • 100% algodão",
-                imagem: "../Imagens/j f united.jpeg"
+                imagem: "../Imagens/j corpo city.jpeg"
             }
         ]
     },
@@ -93,12 +92,12 @@ const produtosPromocao = {
             {
                 nome: "Azul",
                 especificacao: "Cor azul • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/frente city.jpeg"
             },
             {
                 nome: "Azul Claro",
                 especificacao: "Cor azul claro • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/corpo city.jpeg"
             }
         ]
     },
@@ -118,12 +117,12 @@ const produtosPromocao = {
             {
                 nome: "Amarelo",
                 especificacao: "Cor amarela • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/b frente borussia.jpeg"
             },
             {
                 nome: "Preto",
                 especificacao: "Cor preta • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/b costa borussia.jpeg"
             }
         ]
     },
@@ -143,12 +142,12 @@ const produtosPromocao = {
             {
                 nome: "Amarela",
                 especificacao: "Cor amarela • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/c f borussia.jpeg"
             },
             {
                 nome: "Preta",
                 especificacao: "Cor preta • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/c costa borussia.jpeg"
             }
         ]
     },
@@ -168,12 +167,12 @@ const produtosPromocao = {
             {
                 nome: "Vermelha",
                 especificacao: "Cor vermelha • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/j frente bayer.jpeg"
             },
             {
                 nome: "Vermelha e Branca",
                 especificacao: "Vermelho e branco • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/j f bayer.jpeg"
             }
         ]
     },
@@ -193,12 +192,12 @@ const produtosPromocao = {
             {
                 nome: "Vermelha",
                 especificacao: "Cor vermelha • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/j f bayer.jpeg"
             },
             {
                 nome: "Preta",
                 especificacao: "Cor preta • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/j costa bayer.jpeg"
             }
         ]
     },
@@ -218,12 +217,12 @@ const produtosPromocao = {
             {
                 nome: "Vermelho + Branco",
                 especificacao: "Vermelho e branco • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/c frente bayer.jpeg"
             },
             {
                 nome: "Branca",
                 especificacao: "Cor branca • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/c costa bayer.jpeg"
             }
         ]
     },
@@ -243,12 +242,12 @@ const produtosPromocao = {
             {
                 nome: "Branca",
                 especificacao: "Cor branca • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/j frente real.jpeg"
             },
             {
                 nome: "Preta",
                 especificacao: "Cor preta • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/j corpo real.jpeg"
             }
         ]
     },
@@ -268,12 +267,12 @@ const produtosPromocao = {
             {
                 nome: "Azul e Grená",
                 especificacao: "Azul e grená • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/j frente barça.jpeg"
             },
             {
                 nome: "Preta",
                 especificacao: "Cor preta • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/j corpo barça.jpeg"
             }
         ]
     },
@@ -293,12 +292,12 @@ const produtosPromocao = {
             {
                 nome: "Azul e Grená",
                 especificacao: "Azul e grená • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/c barça.jpeg"
             },
             {
                 nome: "Grená",
                 especificacao: "Cor grená • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/corpo barça.jpeg"
             }
         ]
     },
@@ -318,12 +317,12 @@ const produtosPromocao = {
             {
                 nome: "Branca",
                 especificacao: "Cor branca • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/c real.jpeg"
             },
             {
                 nome: "Branca e Dourada",
                 especificacao: "Branco e dourado • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/c frente real.jpeg"
             }
         ]
     },
@@ -343,12 +342,12 @@ const produtosPromocao = {
             {
                 nome: "Off White + Preto",
                 especificacao: "Off white e preto • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/f santos.jpeg"
             },
             {
                 nome: "Preta",
                 especificacao: "Cor preta • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/corpo santos.jpeg"
             }
         ]
     },
@@ -368,12 +367,12 @@ const produtosPromocao = {
             {
                 nome: "Preto",
                 especificacao: "Cor preta • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/m f flamengo.jpeg"
             },
             {
                 nome: "Vermelho e Preto",
                 especificacao: "Vermelho e preto • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/m flamengo.jpeg"
             }
         ]
     },
@@ -393,12 +392,12 @@ const produtosPromocao = {
             {
                 nome: "Verde",
                 especificacao: "Cor verde • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/frente palmeiras.jpeg"
             },
             {
                 nome: "Verde Escuro",
                 especificacao: "Cor verde escuro • 100% algodão",
-                imagem: ""
+                imagem: "../Imagens/f palmeiras.jpeg"
             }
         ]
     }
@@ -613,4 +612,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
     criarCardsPromocao();
 });
-
